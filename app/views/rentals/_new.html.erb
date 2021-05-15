@@ -1,0 +1,7 @@
+<%= simple_form_for [ @house, @rental ] do |f| %>
+  <%= f.input :start_date, as: :datetime, html5: true, input_html: { class: "datepicker" } %>
+  <%= f.input :end_date, as: :datetime, html5: true, input_html: { class: "datepicker" } %>
+  <% if :start_date.present? && :end_date.present? %>
+    <%= f.submit "Submit rental", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
